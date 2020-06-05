@@ -53,7 +53,7 @@ function App() {
     <div className="App">
      
     {!loggedIn ? 
-     <a href="http://localhost:8888">
+     <a href= {process.env.BACKENDHOST || "http://localhost:8888" }>
       <button>Log in with spotify</button> 
       </a>:
       <div>
