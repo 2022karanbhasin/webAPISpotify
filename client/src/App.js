@@ -7,6 +7,7 @@ const s = new Spotify();
 
 function App() {
   function getHashParams() {
+    var x=4
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
         q = window.location.hash.substring(1);
