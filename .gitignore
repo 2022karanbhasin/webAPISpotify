@@ -2,8 +2,12 @@
 
 # dependencies
 nearify/node_modules
+auth-serverfinal/node_modules
+
 /.pnp
 .pnp.js
+
+
 
 # testing
 /coverage
