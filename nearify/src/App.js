@@ -26,6 +26,7 @@ function App() {
 
   const [loggedIn, setLoggedIn]=useState(temp)
   const[nowPlaying, setNowPlaying]=useState({name: "not checked",image:""})
+  const [artists,setArtists]=useState(['None'])
   
   function getNowPlaying(){
     s.getMyCurrentPlaybackState()
@@ -37,6 +38,15 @@ function App() {
         })
       }
       )
+  }
+  function getTopArtists(){
+    s.getMyTopArtists()
+    .then((response)=>{
+      console.log(response)
+      
+      setArtists(response.items)
+
+    })
   }
   return (
     <div className="App">
@@ -52,8 +62,13 @@ function App() {
         <img src={nowPlaying.image} width="250" >
         </img>
       </div>
+      <div>{artists.map(obj=>obj['name'])}
+      </div>
       <button onClick={()=>getNowPlaying()}>
         Check Now Playing
+      </button>
+      <button onClick={()=>getTopArtists()}>
+        Check Top Artists
       </button>
       </div>
     }
