@@ -53,7 +53,7 @@ function App() {
     <div className="App">
      
     {!loggedIn ? 
-     <a href= {process.env.BACKENDHOST || "http://localhost:8888" }>
+     <a href= {"http://nearifyserver.herokuapp.com/login" }>
       <button>Log in with spotify</button> 
       </a>:
       <div>

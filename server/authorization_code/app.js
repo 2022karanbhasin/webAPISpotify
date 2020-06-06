@@ -17,7 +17,8 @@ require('dotenv').config();
 console.log(process.env)
 var client_id = '82994bc13c8e4547bbe75c3509eebee1'; // Your client id
 var client_secret = process.env.secretkey; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = `http://localhost:8888/callback`; // Your redirect uri
+// || 'http://localhost:8888' + '/callback'
 
 /**
  * Generates a random string containing numbers and letters
@@ -106,7 +107,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect('http://nearifyclient.herokuapp.com/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
