@@ -3,7 +3,7 @@
 # dependencies
 nearify/node_modules
 auth-serverfinal/node_modules
-nearify/server/apikey
+nearify/server/apiKey
 
 /.pnp
 .pnp.js
